@@ -141,6 +141,7 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'junegunn/vim-easy-align'
+NeoBundle 'evidens/vim-twig'
 
 " vim-east-align {{{
 vmap <Enter> <Plug>(EasyAlign)
