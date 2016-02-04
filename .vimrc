@@ -117,6 +117,11 @@ autocmd BufNewFile,BufRead Gemfile setlocal filetype=ruby
 
 "------------------------------------------------------------
 " ファイル関連
+"
+" ビジュアルモードで選択したテキストがクリップボードに入るようにする。
+:set clipboard+=autoselect
+" 無名レジスタに入るデータを、*レジスタにも入れる。
+:set clipboard+=unnamed
 
 
 "---------------------------
