@@ -108,6 +108,15 @@ nnoremap  <Esc><Esc> :<C-u>nohlsearch<cr><Esc>
 " jkタイプでノーマルモードへ戻る
 inoremap jk  <Esc>
 
+" 分割画面移動を簡単化
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap sn gt
+nnoremap sp gT
+nnoremap st :<C-u>tabnew<CR>
+
 
 "------------------------------------------------------------
 " ファイル関連
