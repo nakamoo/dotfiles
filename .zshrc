@@ -1,9 +1,13 @@
-#!/bin/zsh
+#!/bin/local/zsh
 # Executes commands at the start of an interactive session.
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
+path=(
+  /usr/local/bin
+  $path
+)
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then

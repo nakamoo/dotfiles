@@ -35,3 +35,4 @@ echo "make synbolic link..."
 ln -sf $DOTFILES_DIR/.vimrc ~/.vimrc
 ln -sf $DOTFILES_DIR/.zshrc ~/.zshrc
 ln -sf $DOTFILES_DIR/.zpreztorc ~/.zpreztorc
+ln -sf $DOTFILES_DIR/.gitconfig ~/.gitconfig
