@@ -15,10 +15,10 @@ fi
 if [ ! -e ~/.zprezto ] ; then
   echo "Prezto is not installed!"
   zsh
-  cd && git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+  cd && git clone --recursive https://github.com/sorin-ionescu/prezto.git "~/.zprezto"
   setopt EXTENDED_GLOB
-    for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-      ln -sf "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+  for rcfile in $(ls ~/.zprezto/runcoms); do
+      ln -sf "$rcfile" "~/.${rcfile:t}"
     done
   echo "Prezto is installed!"
 else
