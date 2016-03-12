@@ -22,6 +22,11 @@ else
 fi
 
 for rcfile in $(ls ~/.zprezto/runcoms); do
+
+  if [ $rcfile == "README.md" ]; then
+    continue
+  fi
+
   ln -sf $rcfile ~/.${rcfile:t}
 done
 
