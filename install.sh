@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -eu
 
 DOTFILES_DIR=$(cd $(dirname $0) && pwd)
 
@@ -12,7 +12,7 @@ fi
 #Preztoのインストール
 if [ ! -e ~/.zprezto ] ; then
   zsh
-  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+  cd && git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
   setopt EXTENDED_GLOB
     for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
       ln -sf "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
