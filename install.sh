@@ -22,7 +22,7 @@ else
 fi
 
 for rcfile in $(ls ~/.zprezto/runcoms); do
-  ln -sf "$rcfile" "~/.${rcfile:t}"
+  ln -sf $rcfile ~/.${rcfile:t}
 done
 
 #dotfiles
