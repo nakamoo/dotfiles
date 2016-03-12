@@ -1,0 +1,18 @@
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[user]
+	name = K0k1Nakamura
+	email = k00ook17@gmail.com
+[alias]
+        s = status
+	co = checkout
+        p = !git push origin `git rev-parse --abbrev-ref HEAD`
+
+[core]
+	excludesfile = /Users/kokinakamura/.gitignore_global
+[color]
+	ui = true
+[http]
+	postBuffer = 524288000
