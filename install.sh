@@ -14,18 +14,19 @@ fi
 #Preztoのインストール
 if [ ! -e ~/.zprezto ] ; then
   echo "Prezto is not installed!"
-  zsh
-  cd && git clone --recursive https://github.com/sorin-ionescu/prezto.git "~/.zprezto"
-  setopt EXTENDED_GLOB
-  for rcfile in $(ls ~/.zprezto/runcoms); do
-      ln -sf "$rcfile" "~/.${rcfile:t}"
-    done
+  cd ~ && git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
   echo "Prezto is installed!"
 else
   echo "Update Prezto!"
   cd ~/.zprezto && git pull && git submodule update --init --recursive
 fi
 
+for rcfile in $(ls ~/.zprezto/runcoms); do
+  ln -sf "$rcfile" "~/.${rcfile:t}"
+done
+
+#dotfiles
 echo "make synbolic link..."
 ln -sf $DOTFILES_DIR/.vimrc ~/.vimrc
 ln -sf $DOTFILES_DIR/.zshrc ~/.zshrc
+ln -sf $DOTFILES_DIR/.zpreztorc ~/.zpreztorc
