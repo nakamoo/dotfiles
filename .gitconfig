@@ -9,6 +9,7 @@
         s = status
 	co = checkout
         p = !git push origin `git rev-parse --abbrev-ref HEAD`
+        b = branch
 
 [core]
 	excludesfile = /Users/kokinakamura/.gitignore_global
