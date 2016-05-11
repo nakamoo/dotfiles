@@ -33,6 +33,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH=$PATH:/Library/TeX/texbin
 eval "$(pyenv init -)"
+# echo "$(pyenv virtualenv-init -)"
 
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=$HOME/.virtualenvs

@@ -157,6 +157,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'evidens/vim-twig'
+NeoBundle 'derekwyatt/vim-scala'
 
 " vim-east-align {{{
 vmap <Enter> <Plug>(EasyAlign)

@@ -22,13 +22,19 @@ else
 fi
 
 for rcfile in $(ls ~/.zprezto/runcoms); do
-
   if [ $rcfile == "README.md" ]; then
     continue
   fi
-
   ln -sf $rcfile ~/.${rcfile:t}
 done
+
+if [ ! -e ~/.pyenv] ; then
+  git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+fi
+
+if [ ! -e ~/.pyenv/plugins/pyenv-virtualenv] ; then
+  git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+fi
 
 #dotfiles
 echo "make synbolic link..."
