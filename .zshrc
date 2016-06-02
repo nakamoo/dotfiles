@@ -15,8 +15,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs..
-eval "$(rbenv init -)"
-alias ctags="`brew --prefix`/bin/ctags"
+# eval "$(rbenv init -)"
+# alias ctags="`brew --prefix`/bin/ctags"
 
 HISTSIZE=10000
 HISTTIMEFORMAT='%Y/%m/%d %H:%M:%S '

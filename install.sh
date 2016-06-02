@@ -2,6 +2,18 @@
 
 DOTFILES_DIR=$(cd $(dirname $0) && pwd)
 
+cmd_check () {
+  if ! type $1 &>/dev/null; then
+    echo "$1 don't exist."
+    echo "install $1!"
+    exit 1
+  fi
+}
+
+cmd_check git
+cmd_check curl
+cmd_check zsh
+
 #For vim
 #neobundleのインストール
 if [ ! -e ~/.vim/bundle ] ; then
@@ -28,11 +40,11 @@ for rcfile in $(ls ~/.zprezto/runcoms); do
   ln -sf $rcfile ~/.${rcfile:t}
 done
 
-if [ ! -e ~/.pyenv] ; then
+if [ ! -e ~/.pyenv ] ; then
   git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 fi
 
-if [ ! -e ~/.pyenv/plugins/pyenv-virtualenv] ; then
+if [ ! -e ~/.pyenv/plugins/pyenv-virtualenv ] ; then
   git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 fi
 
@@ -40,8 +52,10 @@ fi
 echo "make synbolic link..."
 ln -sf $DOTFILES_DIR/.vimrc ~/.vimrc
 ln -sf $DOTFILES_DIR/.zshrc ~/.zshrc
-ln -sf $DOTFILES_DIR/.zpreztorc ~/.zpreztorc
+ln -sf $DOTFILES_DIR/.gitignore ~/.gitignore
 ln -sf $DOTFILES_DIR/.gitconfig ~/.gitconfig
+ln -sf $DOTFILES_DIR/.tmux.conf ~/.tmux.conf
+ln -sf $DOTFILES_DIR/.zpreztorc ~/.zpreztorc
 
 echo "change login shell to zsh"
 chsh -s $(which zsh)
