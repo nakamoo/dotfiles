@@ -13,6 +13,7 @@ cmd_check () {
 cmd_check git
 cmd_check curl
 cmd_check zsh
+cmd_check tmux
 
 #For vim
 #neobundleのインストール
