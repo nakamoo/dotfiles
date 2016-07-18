@@ -40,3 +40,4 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local

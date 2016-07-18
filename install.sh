@@ -52,11 +52,14 @@ fi
 #dotfiles
 echo "make synbolic link..."
 ln -sf $DOTFILES_DIR/.vimrc ~/.vimrc
+ln -sf $DOTFILES_DIR/.vimrc ~/.ideavimrc
 ln -sf $DOTFILES_DIR/.zshrc ~/.zshrc
 ln -sf $DOTFILES_DIR/.gitignore ~/.gitignore
 ln -sf $DOTFILES_DIR/.gitconfig ~/.gitconfig
 ln -sf $DOTFILES_DIR/.tmux.conf ~/.tmux.conf
 ln -sf $DOTFILES_DIR/.zpreztorc ~/.zpreztorc
+[ -f $DOTFILES_DIR/.zshrc.local ] && ln -sf $DOTFILES_DIR/.zshrc.local ~/.zshrc.local
+
 
 echo "change login shell to zsh"
 chsh -s $(which zsh)
