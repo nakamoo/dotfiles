@@ -35,10 +35,10 @@ else
 fi
 
 for rcfile in $(ls ~/.zprezto/runcoms); do
-  if [ $rcfile == "README.md" ]; then
+  if [[ $rcfile == "README.md" ]]; then
     continue
   fi
-  ln -sf $rcfile ~/.${rcfile:t}
+  ln -sf $rcfile ~/.${rcfile}
 done
 
 if [ ! -e ~/.pyenv ] ; then
@@ -62,4 +62,4 @@ ln -sf $DOTFILES_DIR/.zpreztorc ~/.zpreztorc
 
 
 echo "change login shell to zsh"
-chsh -s $(which zsh)
+chsh -s /bin/zsh
