@@ -12,10 +12,8 @@
         b = branch
 
 [core]
-	excludesfile = /Users/kokinakamura/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [color]
 	ui = true
 [http]
 	postBuffer = 524288000
-[init]
-        templatedir = $HOME/.git_template
