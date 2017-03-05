@@ -1,4 +1,4 @@
-#!/bin/sh -eu
+#!/bin/bash
 
 DOTFILES_DIR=$(cd $(dirname $0) && pwd)
 
