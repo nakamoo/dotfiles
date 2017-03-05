@@ -16,6 +16,7 @@ cask 'dropbox'
 cask 'karabiner'
 cask 'flux'
 cask 'pycharm'
+cask 'iterm2'
 mas 'BetterSnapTool', id: 417375580
 mas 'Caffeine', id: 411246225
 mas 'LastPass', id: 926036361
