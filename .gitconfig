@@ -3,7 +3,7 @@
 	smudge = git-lfs smudge %f
 	required = true
 [user]
-	name = K0k1Nakamura
+	name = nakamoo
 	email = k00ook17@gmail.com
 [alias]
         s = status

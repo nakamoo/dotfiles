@@ -35,11 +35,7 @@ export PATH=$PATH:/Library/TeX/texbin
 eval "$(pyenv init -)"
 # deactive pyenv because of anaconda's "active"
 export PATH="$PYENV_ROOT/versions/anaconda2-4.1.0/bin/:$PATH"
+export PATH="$PYENV_ROOT/versions/anaconda-2.4.0/bin/:$PATH"
 # echo "$(pyenv virtualenv-init -)"
-
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
