@@ -1,0 +1,136 @@
+"------------------------------------------------------------
+" Features {{{1
+"
+" Vi互換モードをオフ（Vimの拡張機能を有効）
+set nocompatible
+
+" ファイル名と内容によってファイルタイプを判別し、ファイルタイププラグインを有効にする
+filetype indent plugin on
+
+" 色づけをオン
+syntax on
+
+"------------------------------------------------------------
+" Must have options {{{1
+"
+" バッファを保存しなくても他のバッファを表示できるようにする
+set hidden
+
+" コマンドライン補完を便利に
+set wildmenu
+
+" タイプ途中のコマンドを画面最下行に表示
+set showcmd
+
+" 検索語を強調表示（<C-L>を押すと現在の強調表示を解除する）
+set hlsearch
+
+" インクリメンタルサーチ
+set incsearch
+" <http://www.vim.org/scripts/script.php?script_id=1876>.
+" 歴史的にモードラインはセキュリティ上の脆弱性になっていたので、
+" オフにして代わりに上記のsecuremodelinesスクリプトを使うとよい。
+" set nomodeline
+
+"------------------------------------------------------------
+" Usability options {{{1
+"
+" 検索時に大文字・小文字を区別しない。ただし、検索後に大文字小文字が
+" 混在しているときは区別する
+set ignorecase
+set smartcase
+
+" オートインデント、改行、インサートモード開始直後にバックスペースキーで
+" 削除できるようにする。
+set backspace=indent,eol,start
+
+" オートインデント
+set autoindent
+
+" 移動コマンドを使ったとき、行頭に移動しない
+set nostartofline
+
+" 画面最下行にルーラーを表示する
+set ruler
+
+" ステータスラインを常に表示する
+set laststatus=2
+
+" バッファが変更されているとき、コマンドをエラーにするのでなく、保存する
+" かどうか確認を求める
+set confirm
+
+" ビープの代わりにビジュアルベル（画面フラッシュ）を使う
+set visualbell
+
+" そしてビジュアルベルも無効化する
+set t_vb=
+
+" 全モードでマウスを有効化
+set mouse=a
+
+" コマンドラインの高さを2行に
+set cmdheight=2
+
+" 行番号を表示
+set number
+
+" キーコードはすぐにタイムアウト。マッピングはタイムアウトしない
+set notimeout ttimeout ttimeoutlen=200
+
+
+"------------------------------------------------------------
+" Indentation options {{{1
+" インデント関連のオプション {{{1
+"
+" タブ文字の代わりにスペース2個を使う場合の設定。
+" この場合、'tabstop'はデフォルトの8から変えない。
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
+" インデントにハードタブを使う場合の設定。
+" タブ文字を2文字分の幅で表示する。
+"set shiftwidth=2
+"set tabstop=2
+
+
+"------------------------------------------------------------
+" Mappings {{{1
+" マッピング
+"
+" Yの動作をDやCと同じにする
+map Y y$
+
+" ESC二回押しで検索後の強調表示を解除する
+nnoremap  <Esc><Esc> :<C-u>nohlsearch<cr><Esc>
+
+" jkタイプでノーマルモードへ戻る
+inoremap jk  <Esc>
+
+" 分割画面移動を簡単化
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap sn gt
+nnoremap sp gT
+nnoremap st :<C-u>tabnew<CR>
+
+
+"------------------------------------------------------------
+" ファイル関連
+
+" 以下のファイル名をrubyファイルとみなす
+autocmd BufNewFile,BufRead Gemfile setlocal filetype=ruby
+
+"------------------------------------------------------------
+" ファイル関連
+"
+" ビジュアルモードで選択したテキストがクリップボードに入るようにする。
+set clipboard&
+set clipboard^=unnamedplus
+set clipboard^=unnamed
+" 無名レジスタに入るデータを、*レジスタにも入れる。
+set clipboard+=unnamed
+
